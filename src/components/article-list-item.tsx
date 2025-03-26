@@ -1,9 +1,9 @@
-import { posts } from "@prisma/client";
+import { Posts } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type ArticleListItemProps = Pick<posts, "title" | "slug" | "featured_image">;
+type ArticleListItemProps = Pick<Posts, "title" | "slug" | "featured_image">;
 
 export default function ArticleListItem({ article }: { article: ArticleListItemProps }) {
   const { title, slug, featured_image } = article;

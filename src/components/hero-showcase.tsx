@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import ArticleCard, { ArticleDescription, ArticleTitle } from "./article-card";
-import { posts } from "@prisma/client";
+import { Posts } from "@prisma/client";
 
-export default function HeroShowcase({ posts }: { posts: posts[] }) {
+export default function HeroShowcase({ posts }: { posts: Posts[] }) {
   return (
     <section>
       <div className="grid md:grid-cols-3 md:grid-rows-2 gap-10 md:gap-5 lg:h-[476px]">

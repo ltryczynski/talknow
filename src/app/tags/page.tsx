@@ -1,7 +1,7 @@
 import Main from "@/components/main";
 import { WrapperBox } from "@/components/wrapper";
-import { getPosts } from "@/lib/utils";
 import React from "react";
+import { getPosts } from "../actions/actions";
 
 export default async function Page() {
   const posts = await getPosts();
@@ -19,8 +19,8 @@ export default async function Page() {
             <p>teaser: `{post.teaser}`</p>
             <p>content: `{post.content}`</p>
             <p>category: `{post.category}`</p>
-            <p>published_date: `{post.published_date.toString()}`</p>
-            <p>update_date: `{post.published_date.toString()}`</p>
+            <p>published_date: `{post.publishedAt.toString()}`</p>
+            <p>update_date: `{post.publishedAt.toString()}`</p>
             <p>published: true</p>
           </div>
         ))}

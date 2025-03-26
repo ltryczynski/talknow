@@ -1,10 +1,10 @@
 import HeroShowcase from "@/components/hero-showcase";
-import { getPosts } from "@/lib/utils";
 import { Wrapper, WrapperBox } from "@/components/wrapper";
 import Main from "@/components/main";
 import ArticleWrapper from "@/components/article-wrapper";
 import AdBlock from "@/components/ad-block";
 import { ArticleTopBar } from "@/components/article-card";
+import { getPosts } from "./actions/actions";
 
 export default async function Home() {
   const featured_posts = await getPosts({ take: 3 });

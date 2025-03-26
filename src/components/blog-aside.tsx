@@ -1,18 +1,8 @@
-import { capitalize, cn, getPosts } from "@/lib/utils";
+import { capitalize, cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 import ArticleListItem from "./article-list-item";
-
-// const tags = [
-//   { name: "React", slug: "react" },
-//   { name: "Next.js", slug: "nextjs" },
-//   { name: "Tailwind CSS", slug: "tailwindcss" },
-//   { name: "Health", slug: "health" },
-//   { name: "Fitness", slug: "fitness" },
-//   { name: "Nutrition", slug: "nutrition" },
-//   { name: "Car serivce", slug: "car-service" },
-//   { name: "Electric cards", slug: "electric-cards" },
-// ];
+import { getPosts } from "@/app/actions/actions";
 
 export default async function BlogAside({ tags }: { tags: string[] }) {
   const recentArticles = await getPosts({ take: 3 });

@@ -1,5 +1,4 @@
 import React from "react";
-import { getPostBySlug, getPosts } from "../../../lib/utils";
 import { notFound } from "next/navigation";
 import { Wrapper, WrapperBox } from "../../../components/wrapper";
 import Main from "../../../components/main";
@@ -11,6 +10,7 @@ import { ListBulletIcon, CalendarIcon } from "@radix-ui/react-icons";
 import ArticleCard, { ArticleTitle } from "../../../components/article-card";
 import { Metadata } from "next";
 import BlogAside from "@/components/blog-aside";
+import { getPostBySlug, getPosts } from "@/app/actions/actions";
 
 type PageProps = {
   params: {
@@ -51,7 +51,7 @@ export default async function Page({ params }: PageProps) {
         <section className="flex flex-col absolute bottom-5 left-5 px-5 lg:px-10">
           <div className="flex relative z-20 items-center gap-1 text-gray-50/80 mb-1 pb-2 after:w-full after:h-[1px] after:bottom-0 after:inset-x-0 after:mx-auto after:bg-gradient-to-r from-gray-50/30 via-gray-50/10 to-gray-50/0 after:absolute">
             <CalendarIcon />
-            {new Date(post.published_date).toLocaleDateString()}
+            {new Date(post.publishedAt).toLocaleDateString()}
           </div>
           <h1 className="z-20 text-2xl lg:text-3xl xl:text-5xl">{post.title}</h1>
         </section>
@@ -67,7 +67,7 @@ export default async function Page({ params }: PageProps) {
         <BlogAside tags={post.tags.split(", ")} />
         <div className="border-t col-span-2 pt-3 border-gray-50/10 flex flex-col lg:flex-row gap-y-5 items-center justify-between">
           <p className="text-sm text-gray-50/50 ">
-            Published on {new Date(post.published_date).toLocaleDateString()}
+            Published on {new Date(post.publishedAt).toLocaleDateString()}
           </p>
           <div className="flex gap-x-10 items-center">
             <Link

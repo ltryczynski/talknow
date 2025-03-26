@@ -1,10 +1,11 @@
 import ArticleWrapper from "@/components/article-wrapper";
 import Main from "@/components/main";
 import { WrapperBox } from "@/components/wrapper";
-import { capitalize, getPosts } from "@/lib/utils";
+import { capitalize } from "@/lib/utils";
 import React from "react";
 import { Metadata } from "next";
 import NotFound from "@/app/not-found";
+import { getPosts } from "@/app/actions/actions";
 
 type CategoryPageProps = {
   params: {

@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import ArticleCard, { ArticleDescription, ArticleTitle } from "./article-card";
-import { posts } from "@prisma/client";
+import { Posts } from "@prisma/client";
 
 type ArticleWrapperProps = {
   className?: string;
-  posts: posts[];
+  posts: Posts[];
 };
 
 export default function ArticleWrapper({ className, posts }: ArticleWrapperProps) {

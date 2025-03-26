@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
-import { posts } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import H2 from "./h2";
 import ShowMore from "./show-more";
+import { Posts } from "@prisma/client";
 
 type ArticleCardProps = {
   className?: string;
   children?: React.ReactNode;
-  post: posts;
+  post: Posts;
 };
 
 type ArticleTopBarProps = Omit<ArticleCardProps, "post"> & {

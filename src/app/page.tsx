@@ -1,10 +1,10 @@
 import HeroShowcase from "@/components/hero-showcase";
-import { getPosts } from "@/lib/utils";
 import { Wrapper, WrapperBox } from "@/components/wrapper";
 import Main from "@/components/main";
 import ArticleWrapper from "@/components/article-wrapper";
 import AdBlock from "@/components/ad-block";
 import { ArticleTopBar } from "@/components/article-card";
+import { getPosts } from "./actions/actions";
 
 export default async function Home() {
   const featured_posts = await getPosts({ take: 3 });
@@ -24,12 +24,7 @@ export default async function Home() {
         <ArticleWrapper posts={lifestyle_posts} />
       </WrapperBox>
       <Wrapper className="mt-10">
-        <AdBlock
-          // title="Advertise Here"
-          className="border border-[#5e27b1]"
-          // subtitle="Your ad could be here, right now."
-          imageSrc="/baner.jpg"
-        />
+        <AdBlock className="border border-[#5e27b1]" imageSrc="/baner.jpg" />
       </Wrapper>
 
       <WrapperBox>
